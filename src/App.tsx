@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Auth from "./components/auth/Auth";
 import HomePage from "./components/pages/HomePage";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -27,15 +28,19 @@ function App() {
 
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? (
-      <>
-        <HomePage clickLogout={clearToken} token={sessionToken} />
-      </>
+      <HomePage clickLogout={clearToken} token={sessionToken} />
     ) : (
       <Auth updateToken={updateToken} />
     );
   };
 
-  return <div className="App">{protectedViews()}</div>;
+  return (
+    <div className="App">
+      <Router>
+      {protectedViews()}
+      </Router>
+    </div>
+  );
 }
 
 export default App;

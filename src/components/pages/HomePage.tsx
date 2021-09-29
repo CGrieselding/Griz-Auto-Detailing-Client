@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { AppBar, Tabs, Tab, Button } from "@mui/material";
-import InquiryForm from "../inquiry/InquiryForm"
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import InquiryForm from "../inquiry/InquiryForm";
+import RevPage from "../review/RevPage";
+import OurWorkPage from "./OurWorkPage"
 
 type StateType = {
   value: number;
@@ -27,24 +30,41 @@ export default class HomePage extends Component<PropsType, StateType> {
     return (
       <>
         <h1>Griz Auto Detailing</h1>
-        <AppBar position="static" style={{ background: "magenta" }}>
-          <Tabs
-            value={this.state.value}
-            onChange={this.handleTabs}
-            TabIndicatorProps={{ style: { background: "black" } }}
-          >
-            <Tab label={<span style={{ color: "black" }}>Home</span>} />
-            <Tab label={<span style={{ color: "black" }}>Our Work</span>} />
-            <Tab label={<span style={{ color: "black" }}>Reviews</span>} />
-            <Tab
-              label={<span style={{ color: "black" }}>Your Activity</span>}
-            />
-            <Button color="inherit" onClick={this.props.clickLogout}>
-              Logout
-            </Button>
-          </Tabs>
-        </AppBar>
-        <InquiryForm />
+          <AppBar position="static" style={{ background: "magenta" }}>
+            <Tabs
+              value={this.state.value}
+              onChange={this.handleTabs}
+              TabIndicatorProps={{ style: { background: "black" } }}
+            >
+              <Link to="/">
+                <Tab label={<span style={{ color: "black" }}>Home</span>} />
+              </Link>
+              <Link to="/OurWorkPage">
+              <Tab label={<span style={{ color: "black" }}>Our Work</span>} />
+              </Link>
+              <Link to="/RevPage">
+                <Tab label={<span style={{ color: "black" }}>Reviews</span>} />
+              </Link>
+              <Tab
+                label={<span style={{ color: "black" }}>Your Activity</span>}
+              />
+              <Button color="inherit" onClick={this.props.clickLogout}>
+                Logout
+              </Button>
+            </Tabs>
+          </AppBar>
+          <Switch>
+            <Route path="/OurWorkPage">
+              <OurWorkPage />
+            </Route>
+            <Route path="/RevPage">
+              <RevPage token={this.props.token} />
+            </Route>
+            <Route path="/">
+              <h1>Auto Detailing Services and Packages...</h1>
+          <InquiryForm />
+            </Route>
+          </Switch>
       </>
     );
   }

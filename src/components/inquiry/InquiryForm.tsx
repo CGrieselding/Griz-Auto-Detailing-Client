@@ -54,10 +54,21 @@ export default class InquiryForm extends Component <{}, StateType> {
     <>
     <h1>Contact Us</h1>
       <form onSubmit={this.handleOnSubmit}>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="name">Full Name: </label>
+        <input id="name" type="text" name="name" required />
+        <br />
+        <label htmlFor="email">Email: </label>
         <input id="email" type="email" name="email" required />
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
+        <br />
+        <label htmlFor="phNumber">Phone Number: </label>
+        <input id="phNumber" type="tel" name="phNumber" />
+        <br />
+        <label htmlFor="car">Car Make & Model: </label>
+        <input id="car" type="text" name="car" />
+        <br />
+        <label htmlFor="message">Message: </label>
+        <textarea id="message" name="message" required></textarea>
+        <br />
         <button type="submit" disabled={this.state.serverState.submitting}>
           Submit
         </button>

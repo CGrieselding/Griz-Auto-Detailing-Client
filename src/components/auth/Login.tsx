@@ -4,6 +4,7 @@ import { TextField, Button } from "@mui/material";
 type StateType = {
   email: string;
   password: string;
+  isAdmin: boolean;
 };
 
 type PropsType = {
@@ -16,6 +17,7 @@ export default class Login extends Component<PropsType, StateType> {
     this.state = {
       email: "",
       password: "",
+      isAdmin: false
     };
   }
 
@@ -27,6 +29,7 @@ export default class Login extends Component<PropsType, StateType> {
         user: {
           email: this.state.email,
           password: this.state.password,
+          isAdmin: this.state.isAdmin,
         },
       }),
       headers: new Headers({
@@ -74,7 +77,7 @@ export default class Login extends Component<PropsType, StateType> {
               Password
             </TextField>
           </div>
-          <Button type="submit" variant="outlined">
+          <Button type="submit" variant="contained">
             Login
           </Button>
         </form>

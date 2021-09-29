@@ -100,7 +100,7 @@ export default class CreateAcct extends Component<PropsType, StateType> {
               Password
             </TextField>
           </div>
-          <Button type="submit" variant="outlined">
+          <Button type="submit" variant="contained">
             Create Account
           </Button>
         </form>
