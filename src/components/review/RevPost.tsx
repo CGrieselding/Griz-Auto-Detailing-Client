@@ -84,6 +84,16 @@ export default class RevPost extends Component<PropsType, StateType> {
           </FormControl>
           <br />
           <FormControl>
+            <InputLabel htmlFor="Image URL" />
+            <Input
+              id="Image URL"
+              type="text"
+              value={this.state.imageURL}
+              onChange={(e) => this.setState({ imageURL: e.target.value })}
+            />
+          </FormControl>
+          <br />
+          <FormControl>
             <InputLabel htmlFor="review" />
             <TextareaAutosize
               aria-label="minimum height"

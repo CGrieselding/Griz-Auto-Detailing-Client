@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import InquiryForm from "../inquiry/InquiryForm";
 import RevPage from "../review/RevPage";
 import OurWorkPage from "./OurWorkPage"
+import YourActivityPage from "./YourActivityPage";
 
 type StateType = {
   value: number;
@@ -40,15 +41,17 @@ export default class HomePage extends Component<PropsType, StateType> {
                 <Tab label={<span style={{ color: "black" }}>Home</span>} />
               </Link>
               <Link to="/OurWorkPage">
-              <Tab label={<span style={{ color: "black" }}>Our Work</span>} />
+              <Tab label={<span style={{ color: "black"}}>Our Work</span>} />
               </Link>
               <Link to="/RevPage">
                 <Tab label={<span style={{ color: "black" }}>Reviews</span>} />
               </Link>
+              <Link to="/YourActivityPage">
               <Tab
                 label={<span style={{ color: "black" }}>Your Activity</span>}
               />
-              <Button color="inherit" onClick={this.props.clickLogout}>
+              </Link>
+              <Button color="inherit" onClick={this.props.clickLogout} style={{position:"absolute", right:"66px", top:"5px"}}>
                 Logout
               </Button>
             </Tabs>
@@ -59,6 +62,9 @@ export default class HomePage extends Component<PropsType, StateType> {
             </Route>
             <Route path="/RevPage">
               <RevPage token={this.props.token} />
+            </Route>
+            <Route path="/YourActivityPage">
+              <YourActivityPage token={this.props.token} />
             </Route>
             <Route path="/">
               <h1>Auto Detailing Services and Packages...</h1>
