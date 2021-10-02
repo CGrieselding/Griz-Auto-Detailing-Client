@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { TextField, Button } from "@mui/material";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 type StateType = {
   email: string;
@@ -49,6 +50,7 @@ export default class Login extends Component<PropsType, StateType> {
       <>
       <h1>Griz Auto Detailing</h1>
         <h1>Login</h1>
+        <AccountBoxIcon style={{fontSize: "55px", marginBottom: "15px"}}/>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div>
             <TextField

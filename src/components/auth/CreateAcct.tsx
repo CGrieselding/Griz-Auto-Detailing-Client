@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 type StateType = {
   firstName: string;
@@ -11,6 +12,18 @@ type StateType = {
 
 type PropsType = {
   updateToken: (input: string) => void;
+};
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
 };
 
 export default class CreateAcct extends Component<PropsType, StateType> {
@@ -49,11 +62,24 @@ export default class CreateAcct extends Component<PropsType, StateType> {
       });
   }
 
+  admin = (user: any) => {
+    if (this.state.isAdmin === true) {
+      fetch(`http://localhost:4000/user/deleteUser/${user.id}`, {
+        method: "DELETE",
+        headers: new Headers({
+          "Content-Type":"application/json",
+        })
+      })
+    }
+  }
+
   render() {
     return (
       <div>
         <h1>Griz Auto Detailing</h1>
+        <Box sx={style}>
         <h1>Create Account</h1>
+        <AccountBoxIcon style={{fontSize: "55px", marginBottom: "15px"}}/>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div>
             <TextField
@@ -104,6 +130,7 @@ export default class CreateAcct extends Component<PropsType, StateType> {
             Create Account
           </Button>
         </form>
+        </Box>
       </div>
     );
   }

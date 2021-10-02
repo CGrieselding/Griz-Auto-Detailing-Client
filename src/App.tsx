@@ -20,6 +20,12 @@ function App() {
     console.log(newToken);
   };
 
+  // 1. Create a get request that tells us whether our token belongs to an admin
+        // get request that finds a user and sends back a user is an admin or not (SERVER)
+  // 2. Fetch from that endpoint when the app loads
+  // 3. store if user is an admin in a state variable
+  // 4. conditionally render "stuff" based on isAdmin
+
   // Clearing token on logout
   const clearToken = () => {
     localStorage.clear();
@@ -36,9 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-      {protectedViews()}
-      </Router>
+      <Router>{protectedViews()}</Router>
     </div>
   );
 }

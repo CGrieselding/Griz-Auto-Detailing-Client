@@ -84,7 +84,7 @@ export default class RevPost extends Component<PropsType, StateType> {
           </FormControl>
           <br />
           <FormControl>
-            <InputLabel htmlFor="Image URL" />
+            <InputLabel htmlFor="ImageURL">Image/Video Link</InputLabel>
             <Input
               id="Image URL"
               type="text"
