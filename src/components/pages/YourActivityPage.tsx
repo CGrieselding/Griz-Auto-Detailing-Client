@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "@mui/material";
+import { Button, Paper, Stack } from "@mui/material";
 import { Router, Link, Switch, Route } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -80,31 +80,35 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
   revMapper = () => {
     return this.state.reviews.map((review: any, index: any) => {
       return (
-        <div key={index}>
-          {review.title}
-          {review.date}
-          {review.review}
-          {review.imageURL}
-          <Button
-            startIcon={<EditIcon />}
-            onClick={() => {
-              this.editUpdate(review);
-              this.updateOn();
-            }}
-            variant="outlined"
-          >
-            Edit
-          </Button>
-          <Button
-            startIcon={<DeleteIcon />}
-            onClick={() => {
-              this.deleteRev(review);
-            }}
-            variant="outlined"
-          >
-            Delete
-          </Button>
-        </div>
+        <Stack className="revStack">
+          <div key={index}>
+            <Paper elevation={20} className="myRevPaper">
+              {review.title}
+              {review.date}
+              {review.review}
+              {review.imageURL}
+              <Button
+                startIcon={<EditIcon />}
+                onClick={() => {
+                  this.editUpdate(review);
+                  this.updateOn();
+                }}
+                variant="outlined"
+              >
+                Edit
+              </Button>
+              <Button
+                startIcon={<DeleteIcon />}
+                onClick={() => {
+                  this.deleteRev(review);
+                }}
+                variant="outlined"
+              >
+                Delete
+              </Button>
+            </Paper>
+          </div>
+        </Stack>
       );
     });
   };
@@ -145,12 +149,12 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
   render() {
     return (
       <>
-        <h1>Your Previous Activity</h1>
-        <h3>Your Reviews (edit/delete if needed)</h3>
+        <h1 className="actTitle">Your Previous Activity</h1>
+        <h3 className="actTitle2">Reviews</h3>
         {this.state.reviews.length > 0 ? (
           this.revMapper()
         ) : (
-          <p>You have not posted any reviews yet.</p>
+          <p className="noRevYet">You have not posted any reviews yet.</p>
         )}
 
         {this.state.updateActive ? (
@@ -163,11 +167,11 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
         ) : (
           <></>
         )}
-        <h3>Your Inquiries</h3>
+        <h3 className="actTitle3">Inquiries</h3>
         {this.state.inquiries.length > 0 ? (
           this.inqMapper()
         ) : (
-          <p>You have not sent Griz Auto Detailing any inquiries yet.</p>
+          <p className="noInqYet">You have not sent us any inquiries yet.</p>
         )}
 
         <h3>Want to edit your sent inquiries?</h3>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import {Button} from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 
 type StateType = {
   serverState: {
@@ -101,58 +103,87 @@ export default class InqSend extends Component<PropsType, StateType> {
   render() {
     return (
       <>
-        <h1>Contact Us</h1>
-        <form onSubmit={this.handleOnSubmit}>
-          <label htmlFor="name">Full Name: </label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={this.state.fullName}
-            onChange={(e) => this.setState({ fullName: e.target.value })}
-            required
-          />
+        <form onSubmit={this.handleOnSubmit} className="inqForm">
+        <h1 className="inqTitle">Have a question? Want more information?</h1>
+        <h1 style={{ fontSize: "30px", color: "#FF1178", marginBottom: "30px" }}>
+          SEND US AN INQUIRY!
+        </h1>
+        <hr />
+          <p className="formField">
+            <label htmlFor="name" className="inqLabel">
+              First & Last Name:{" "}
+            </label>
+            <input
+              className="inqInput"
+              id="name"
+              type="text"
+              name="name"
+              value={this.state.fullName}
+              onChange={(e) => this.setState({ fullName: e.target.value })}
+              required
+            />
+            <br />
+            <label htmlFor="email" className="inqLabel">
+              Email:{" "}
+            </label>
+            <input
+              className="inqInput"
+              id="email"
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={(e) => this.setState({ email: e.target.value })}
+              required
+            />
+            <br />
+            <label htmlFor="phone number" className="inqLabel">
+              Phone Number:{" "}
+            </label>
+            <input
+              className="inqInput"
+              id="phone number"
+              type="tel"
+              name="phone number"
+              value={this.state.phoneNumber}
+              onChange={(e) => this.setState({ phoneNumber: e.target.value })}
+            />
+            <br />
+            <label htmlFor="car" className="inqLabel">
+              Car Make & Model:{" "}
+            </label>
+            <input
+              className="inqInput"
+              id="car"
+              type="text"
+              name="car"
+              value={this.state.car}
+              onChange={(e) => this.setState({ car: e.target.value })}
+            />
+            <br />
+            <label htmlFor="message" className="inqLabel">
+              Message:{" "}
+            </label>
+            <textarea
+            className="inqTextarea"
+              id="message"
+              name="message"
+              value={this.state.message}
+              onChange={(e) => this.setState({ message: e.target.value })}
+              required
+              rows={10}
+              placeholder="Your message..."
+            />
+          </p>
           <br />
-          <label htmlFor="email">Email: </label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={(e) => this.setState({ email: e.target.value })}
-            required
-          />
-          <br />
-          <label htmlFor="phone number">Phone Number: </label>
-          <input
-            id="phone number"
-            type="tel"
-            name="phone number"
-            value={this.state.phoneNumber}
-            onChange={(e) => this.setState({ phoneNumber: e.target.value })}
-          />
-          <br />
-          <label htmlFor="car">Car Make & Model: </label>
-          <input
-            id="car"
-            type="text"
-            name="car"
-            value={this.state.car}
-            onChange={(e) => this.setState({ car: e.target.value })}
-          />
-          <br />
-          <label htmlFor="message">Message: </label>
-          <textarea
-            id="message"
-            name="message"
-            value={this.state.message}
-            onChange={(e) => this.setState({ message: e.target.value })}
-            required
-          ></textarea>
-          <br />
-          <button type="submit" disabled={this.state.serverState.submitting}>
-            Submit
-          </button>
+          <Button
+            className="inqButton"
+            type="submit"
+            disabled={this.state.serverState.submitting}
+            endIcon={<SendIcon/>}
+            variant="contained"
+          >
+            Send Inquiry
+          </Button>
           {this.state.serverState.status && (
             <p className={!this.state.serverState.status.ok ? "errorMsg" : ""}>
               {this.state.serverState.status.msg}

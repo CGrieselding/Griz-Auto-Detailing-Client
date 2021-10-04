@@ -1,3 +1,343 @@
-.App {
+@font-face {
+  font-family: "Website Font";
+  src: url("./assets/fonts/futura\ light\ bt.ttf");
+}
+
+@font-face {
+  font-family: "Main Title Font";
+  src: url("./assets/fonts/PlasticLoveRegular-MVO9v.ttf");
+}
+
+@font-face {
+  font-family: "Package Font";
+  src: url("./assets/fonts/HotRod.ttf");
+}
+
+body {
   text-align: center;
+  background-color: #181e2a;
+  font-family: "Website Font";
+}
+
+/* HOME PAGE */
+
+.mainTitle {
+  font-family: "Main Title Font";
+  font-size: 75px;
+  color: #01fff4;
+}
+
+.appBarLink {
+  color: black;
+  font-weight: 800;
+  font-size: 15px;
+  margin: 5px 10px;
+}
+
+.appBarLink:hover {
+  font-size: 20px;
+}
+
+.logoutButton:hover {
+  border: 2px dashed #fe0000;
+}
+
+/* DETAILING PAGE */
+
+.paperClass {
+  padding: 14px;
+  border: 2px solid white;
+  color: white !important;
+  background-color: black !important;
+}
+
+.mainPaperTitle {
+  font-family: "Package Font";
+  font-size: 50px;
+  color: white;
+  border: 2px solid white;
+  margin: 60px 500px 15px 500px;
+  padding: 15px;
+  background-color: black;
+}
+
+.paperTitle {
+  color: #fff205;
+  font-family: "Package Font";
+  font-size: 32px;
+}
+
+.paperTitle2 {
+  color: #fe0000;
+  font-family: "Package Font";
+  font-size: 32px;
+}
+
+.paperTitle3 {
+  color: #7cff01;
+  font-family: "Package Font";
+  font-size: 32px;
+}
+
+.paperTitle4 {
+  color: #b026ff;
+  font-family: "Package Font";
+  font-size: 32px;
+}
+
+/* INQ SEND */
+
+.inqTitle {
+  font-family: "Package Font";
+  color: #ff1178;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.inqForm {
+  border: 2px solid white;
+  margin: 120px 450px;
+  padding: 40px 0;
+  background-color: black;
+}
+
+.inqLabel {
+  color: white;
+  font-weight: 800;
+  font-size: 22px;
+  text-shadow: 2px 2px #ff1178;
+  margin-bottom: 100px !important;
+}
+
+.inqInput {
+  margin: 25px 8px;
+  width: 200px;
+  height: 25px;
+  font-family: "Website Font";
+  font-size: 15px;
+  padding: 5px;
+}
+
+.inqTextarea {
+  width: 300px;
+  font-family: "Website Font";
+  font-size: 15px;
+  padding: 5px;
+}
+
+.inqInput:focus,
+.inqTextarea:focus,
+.inqInput[type]:focus {
+  border-color: #ff1178 !important;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #ff1178 !important;
+  outline: 0 none !important;
+}
+
+.formField * {
+  vertical-align: middle !important;
+}
+
+.inqButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: white !important;
+  background-color: #ff1178 !important;
+  border: 2px solid white !important;
+  -webkit-transition: all 0.2s !important;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0px 6px 0px #ff1178 !important;
+  -moz-box-shadow: 0px 6px 0px #ff1178 !important;
+  box-shadow: 0px 6px 0px white !important;
+}
+
+.inqButton:active {
+  -webkit-box-shadow: 0px 2px 0px #ff1178;
+  -moz-box-shadow: 0px 2px 0px #ff1178;
+  box-shadow: 0px 2px 0px #ff1178;
+  position: relative;
+  top: 4px;
+}
+
+/* OUR WORK */
+
+.workTitle {
+  font-size: 62px;
+  font-family: "Package Font";
+  color: #fe0000;
+  border: 2px solid white;
+  margin: 60px 600px 15px 600px;
+  padding: 22px 0 10px 0;
+  background-color: black;
+}
+
+/* REV POST */
+
+.revTitle {
+  font-size: 55px;
+  font-family: "Package Font";
+  color: #b026ff;
+  border: 2px solid white;
+  margin: 60px 500px 15px 500px;
+  padding: 22px 0 15px 0;
+  background-color: black;
+}
+
+.revForm {
+  border: 2px solid white;
+  margin: 50px 325px;
+  padding: 10px 0 45px 0;
+  background-color: black;
+}
+
+.revLabel {
+  color: white;
+  font-family: "Website Font";
+  font-size: 35px;
+  font-weight: 900;
+  text-shadow: 2px 2px #b026ff;
+  margin-top: 36px;
+}
+
+.revOptional {
+  color: white;
+  text-shadow: 2px 2px #b026ff;
+  font-size: 18px;
+  margin-top: 0 !important;
+}
+
+.revInput {
+  background-color: white;
+  font-family: "Website Font";
+  padding: 10px;
+  font-size: 15px;
+  width: 300px;
+}
+
+.revTextarea {
+  width: 400px;
+  font-family: "Website Font";
+  margin-bottom: 30px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.revInput:focus,
+.revTextarea:focus,
+.revInput[type]:focus {
+  border-color: #b026ff !important;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #b026ff !important;
+  outline: 0 none !important;
+}
+
+.revButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: white !important;
+  background-color: #b026ff !important;
+  border: 2px solid white !important;
+  -webkit-transition: all 0.2s !important;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0px 6px 0px #b026ff !important;
+  -moz-box-shadow: 0px 6px 0px #b026ff !important;
+  box-shadow: 0px 6px 0px white !important;
+}
+
+.revButton:active {
+  -webkit-box-shadow: 0px 2px 0px #ff1178;
+  -moz-box-shadow: 0px 2px 0px #ff1178;
+  box-shadow: 0px 2px 0px #ff1178;
+  position: relative;
+  top: 4px;
+}
+
+.revTitle2 {
+  font-size: 45px;
+  font-family: "Package Font";
+  color: #7cff01;
+  border: 2px solid white;
+  margin: 100px 525px 50px 525px;
+  padding: 15px;
+  background-color: black;
+}
+
+/* REV ALL */
+
+.revAllPaper {
+  padding: 15px 50px 32px 50px !important;
+  border: 2px solid white;
+  color: white !important;
+  background-color: black !important;
+  margin-bottom: 25px;
+}
+
+.revAllPaper:hover {
+  border: 6px solid #7cff01;
+}
+
+.revAllTitle {
+  font-size: 25px;
+  text-decoration: underline;
+  color: #7cff01;
+}
+
+/* YOUR ACTIVITY PAGE */
+
+.actTitle {
+  font-size: 55px;
+  font-family: "Package Font";
+  color: #ff1178;
+  border: 2px solid white;
+  margin: 60px 500px 15px 500px;
+  padding: 22px 0 10px 0;
+  background-color: black;
+}
+
+.actTitle2 {
+  font-size: 40px;
+  font-family: "Package Font";
+  color: #fff205;
+  border: 2px solid white;
+  margin: 60px 700px 15px 700px;
+  padding: 22px 0 15px 0;
+  background-color: black;
+}
+
+.noRevYet {
+  font-family: "Package Font";
+  color: #fff205;
+  font-size: 45px;
+}
+
+.noInqYet {
+  font-family: "Package Font";
+  color: #fe0000;
+  font-size: 45px;
+}
+
+.myRevPaper {
+  padding: 15px 50px 32px 50px !important;
+  border: 2px solid white;
+  color: white !important;
+  background-color: black !important;
+  margin-bottom: 25px;
+}
+
+.revStack {
+margin: 20px 500px 20px 500px;
+}
+
+.actTitle3 {
+  font-size: 40px;
+  font-family: "Package Font";
+  color: #fe0000;
+  border: 2px solid white;
+  margin: 60px 700px 15px 700px;
+  padding: 22px 0 15px 0;
+  background-color: black;
 }

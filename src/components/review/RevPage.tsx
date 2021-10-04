@@ -15,7 +15,6 @@ export default class RevPage extends Component<PropsType, {}> {
         return(
             <>
             <RevPost token={this.props.token} />
-            <hr />
             <RevAll token={this.props.token} />
             </>
         )

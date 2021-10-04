@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 type StateType = {
@@ -10,6 +10,18 @@ type StateType = {
 
 type PropsType = {
   updateToken: (input: string) => void;
+};
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "6px solid #7CFF01",
+  boxShadow: 24,
+  p: 4,
 };
 
 export default class Login extends Component<PropsType, StateType> {
@@ -49,6 +61,7 @@ export default class Login extends Component<PropsType, StateType> {
     return (
       <>
       <h1>Griz Auto Detailing</h1>
+      <Box sx={style}>
         <h1>Login</h1>
         <AccountBoxIcon style={{fontSize: "55px", marginBottom: "15px"}}/>
         <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -83,6 +96,7 @@ export default class Login extends Component<PropsType, StateType> {
             Login
           </Button>
         </form>
+        </Box>
       </>
     );
   }

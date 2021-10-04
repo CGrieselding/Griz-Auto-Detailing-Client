@@ -99,7 +99,7 @@ export default class InqView extends Component<PropsType, StateType> {
         {this.state.inquiries.length > 0 ? (
           this.inqMapper()
         ) : (
-          <p>You have not sent Griz Auto Detailing any inquiries yet.</p>
+          <p className="noInqYet">You have no inquiries to edit.</p>
         )}
 
         {this.state.updateActive ? (

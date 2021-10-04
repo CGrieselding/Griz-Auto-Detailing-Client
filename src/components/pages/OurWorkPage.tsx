@@ -4,7 +4,7 @@ export default class OurWorkPage extends Component {
   render() {
     return (
       <>
-        <h1>Here is some of our previous work...</h1>
+        <h1 className="workTitle">Our Work</h1>
         <h6>Link Alec's Instagram</h6>
       </>
     );

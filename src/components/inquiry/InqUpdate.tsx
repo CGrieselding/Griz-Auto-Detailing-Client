@@ -87,20 +87,68 @@ export default class InqUpdate extends Component<PropsType, StateType> {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-            <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h4" component="h2">
-                    Update Your Inquiry:
-                <Button onClick={this.props.updateOff}>
-                    <CloseIcon />
-                </Button>
-                </Typography>
-                <form onSubmit={this.inqUpdate}>
-                    <Typography id="modal-modal-description" sx={{mt: 2}}>
-                        <label htmlFor="fullName">Edit Name:</label>
-                        <input name="fullName" type="text" value={this.state.editFullName} onChange={(e) => this.setState({editFullName: e.target.value})} />
-                    </Typography>
-                </form>
-            </Box>
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h4" component="h2">
+              Update Your Inquiry:
+              <Button onClick={this.props.updateOff}>
+                <CloseIcon />
+              </Button>
+            </Typography>
+            <form onSubmit={this.inqUpdate}>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <label htmlFor="fullName">Edit Name:</label>
+                <input
+                  name="fullName"
+                  type="text"
+                  value={this.state.editFullName}
+                  onChange={(e) =>
+                    this.setState({ editFullName: e.target.value })
+                  }
+                />
+              </Typography>
+              <Typography>
+                <label htmlFor="email">Edit Email:</label>
+                <input
+                  name="email"
+                  type="text"
+                  value={this.state.editEmail}
+                  onChange={(e) => this.setState({ editEmail: e.target.value })}
+                />
+              </Typography>
+              <Typography>
+                <label htmlFor="phoneNumber">Edit Phone Number:</label>
+                <input
+                  name="phoneNumber"
+                  type="tel"
+                  value={this.state.editPhoneNumber}
+                  onChange={(e) =>
+                    this.setState({ editPhoneNumber: e.target.value })
+                  }
+                />
+              </Typography>
+              <Typography>
+                <label htmlFor="car">Edit Car Make & Model:</label>
+                <input
+                  name="car"
+                  type="text"
+                  value={this.state.editCar}
+                  onChange={(e) => this.setState({ editCar: e.target.value })}
+                />
+              </Typography>
+              <Typography>
+                <label htmlFor="message">Edit Message:</label>
+                <input
+                  name="message"
+                  type="text"
+                  value={this.state.editMessage}
+                  onChange={(e) =>
+                    this.setState({ editMessage: e.target.value })
+                  }
+                />
+              </Typography>
+              <Button type="submit" variant="contained">Update Inquiry</Button>
+            </form>
+          </Box>
         </Modal>
       </>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 
 type StateType = {
   reviews: Array<string>;
@@ -32,18 +32,38 @@ export default class RevAll extends Component<PropsType, StateType> {
       });
   };
 
-  render() {  // ADD PAGINATION??
+  render() {
+    // ADD PAGINATION??
     return (
       <>
-      <h1>Check Out Our Reviews!</h1>
-        {this.state.reviews.map((review: any) => (
-          <>
-            {review.title}
-            {review.date}
-            {review.review}
-            {review.imageURL}
-          </>
-        ))}
+        <h1 className="revTitle2">Check Out Our Reviews!</h1>
+        <Grid
+          container
+          spacing={5}
+          justifyContent="flex-start"
+          alignItems="center"
+          direction="row"
+          style={{marginLeft: "20px"}}
+        >
+          {this.state.reviews.map((review: any) => (
+            <>
+              <Grid container item xs={3}>
+                <Paper elevation={20} className="revAllPaper">
+                  <h3 className="revAllTitle">Title:</h3>
+                  <span style={{fontSize: "17px"}}>{review.title}</span>
+                  <h3 className="revAllTitle">Date:</h3>
+                  <span style={{fontSize: "17px"}}>{review.date}</span>
+                  <h3 className="revAllTitle">Image/Video URL:</h3>
+                  {review.imageURL != 0 ? (
+                    <span style={{fontSize: "17px"}}>{review.imageURL}</span>
+                    ) : (<p style={{fontSize: "17px"}}>N/A</p>)}
+                  <h3 className="revAllTitle">Review:</h3>
+                  <span style={{fontSize: "17px"}}>{review.review}</span>
+                </Paper>
+              </Grid>
+            </>
+          ))}
+        </Grid>
       </>
     );
   }

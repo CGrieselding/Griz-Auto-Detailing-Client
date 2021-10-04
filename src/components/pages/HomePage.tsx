@@ -6,7 +6,6 @@ import RevPage from "../review/RevPage";
 import OurWorkPage from "./OurWorkPage";
 import YourActivityPage from "./YourActivityPage";
 import DetailingPage from "./DetailingPage";
-import InqView from "../inquiry/InqView"
 
 type StateType = {
   value: number;
@@ -32,33 +31,34 @@ export default class HomePage extends Component<PropsType, StateType> {
   render() {
     return (
       <>
-        <h1>Griz Auto Detailing</h1>
-        <AppBar position="static" style={{ background: "magenta" }}>
+        <h1 className="mainTitle">GRIZ AUTO DETAILING</h1>
+        <AppBar position="static" style={{ background: "#01FFF4" }}>
           <Tabs
             value={this.state.value}
             onChange={this.handleTabs}
-            TabIndicatorProps={{ style: { background: "black" } }}
+            TabIndicatorProps={{ style: { background: "black", alignItems: "center", justifyContent: "center"} }}
           >
-            <Link to="/">
-              <Tab label={<span style={{ color: "black" }}>Home</span>} />
+            <Link to="/" style={{textDecoration: "none"}}>
+              <Tab label={<span className="appBarLink">┇ Home ┇</span>} />
             </Link>
-            <Link to="/OurWorkPage">
-              <Tab label={<span style={{ color: "black" }}>Our Work</span>} />
+            <Link to="/OurWorkPage" style={{textDecoration: "none"}}>
+              <Tab label={<span className="appBarLink">┇ Our Work ┇</span>} />
             </Link>
-            <Link to="/RevPage">
-              <Tab label={<span style={{ color: "black" }}>Reviews</span>} />
+            <Link to="/RevPage" style={{textDecoration: "none"}}>
+              <Tab label={<span className="appBarLink">┇ Reviews ┇</span>} />
             </Link>
-            <Link to="/YourActivityPage">
+            <Link to="/YourActivityPage" style={{textDecoration: "none"}}>
               <Tab
-                label={<span style={{ color: "black" }}>Your Activity</span>}
+                label={<span className="appBarLink">┇ Your Activity ┇</span>}
               />
             </Link>
             <Button
               color="inherit"
               onClick={this.props.clickLogout}
-              style={{ position: "absolute", right: "66px", top: "5px" }}
+              style={{ color: "#FE0000", position: "absolute", right: "66px", top: "8px", bottom: "8px", fontSize: "15px", fontWeight: "bolder"}}
+              className="logoutButton"
             >
-              Logout
+            ┇ Logout ┇
             </Button>
           </Tabs>
         </AppBar>

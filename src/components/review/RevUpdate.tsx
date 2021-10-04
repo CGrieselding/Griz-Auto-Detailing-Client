@@ -113,7 +113,7 @@ export default class RevUpdate extends Component<PropsType, StateType> {
                 <label htmlFor="imageURL">Edit Image/Video URL:</label>
                 <input
                   name="imageURL"
-                  type="text"
+                  type="url"
                   value={this.state.editImageURL}
                   onChange={(e) =>
                     this.setState({ editImageURL: e.target.value })

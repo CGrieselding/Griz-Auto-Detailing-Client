@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  FormControl,
-  Input,
-  InputLabel,
-  TextareaAutosize,
-  Button,
-} from "@mui/material";
+import { FormControl, TextareaAutosize, Button } from "@mui/material";
 
 type StateType = {
   title: string;
@@ -49,21 +43,25 @@ export default class RevPost extends Component<PropsType, StateType> {
       .then((res) => res.json())
       .then((postRev) => {
         console.log(postRev);
-        this.setState({ title: "" });
-        this.setState({ date: "" });
-        this.setState({ review: "" });
-        this.setState({ imageURL: "" });
+        this.setState({ title: "", date: "", review: "", imageURL: "" });
       });
   };
 
   render() {
     return (
       <>
-        <h1>Leave Us A Review!</h1>
-        <form onSubmit={this.handlePost}>
+        <h1 className="revTitle">LEAVE US A REVIEW!</h1>
+        <form onSubmit={this.handlePost} className="revForm">
           <FormControl>
-            <InputLabel htmlFor="title">Title: </InputLabel>
-            <Input
+            <label
+              htmlFor="title"
+              className="revLabel"
+              style={{ marginBottom: "12px" }}
+            >
+              Title:{" "}
+            </label>
+            <input
+              className="revInput"
               id="title"
               type="text"
               value={this.state.title}
@@ -73,8 +71,15 @@ export default class RevPost extends Component<PropsType, StateType> {
           </FormControl>
           <br />
           <FormControl>
-            <InputLabel htmlFor="date" />
-            <Input
+            <label
+              htmlFor="date"
+              className="revLabel"
+              style={{ marginBottom: "12px" }}
+            >
+              Date:{" "}
+            </label>
+            <input
+              className="revInput"
               id="date"
               type="date"
               value={this.state.date}
@@ -84,8 +89,12 @@ export default class RevPost extends Component<PropsType, StateType> {
           </FormControl>
           <br />
           <FormControl>
-            <InputLabel htmlFor="ImageURL">Image/Video Link</InputLabel>
-            <Input
+            <label htmlFor="ImageURL" className="revLabel">
+              Image/Video Link:
+            </label>
+            <p className="revOptional">(optional)</p>
+            <input
+              className="revInput"
               id="Image URL"
               type="text"
               value={this.state.imageURL}
@@ -94,18 +103,29 @@ export default class RevPost extends Component<PropsType, StateType> {
           </FormControl>
           <br />
           <FormControl>
-            <InputLabel htmlFor="review" />
+            <label
+              htmlFor="review"
+              className="revLabel"
+              style={{ marginBottom: "15px" }}
+            >
+              Review:
+            </label>
             <TextareaAutosize
+              className="revTextarea"
               aria-label="minimum height"
-              minRows={5}
-              placeholder="Review..."
-              style={{ width: 400 }}
+              minRows={6}
+              placeholder="Your review..."
               value={this.state.review}
               onChange={(e) => this.setState({ review: e.target.value })}
             />
           </FormControl>
           <br />
-          <Button onClick={this.handlePost} type="submit" variant="contained">
+          <Button
+            onClick={this.handlePost}
+            className="revButton"
+            type="submit"
+            variant="contained"
+          >
             Submit Review
           </Button>
         </form>
