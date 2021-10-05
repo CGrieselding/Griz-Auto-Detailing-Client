@@ -4,7 +4,6 @@ import { Router, Link, Switch, Route } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import RevUpdate from "../review/RevUpdate";
-import InqUpdate from "../inquiry/InqUpdate";
 import InqView from "../inquiry/InqView";
 
 type StateType = {
@@ -80,13 +79,22 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
   revMapper = () => {
     return this.state.reviews.map((review: any, index: any) => {
       return (
-        <Stack className="revStack">
+        <Stack className="myStack">
           <div key={index}>
-            <Paper elevation={20} className="myRevPaper">
-              {review.title}
-              {review.date}
-              {review.review}
-              {review.imageURL}
+            <Paper elevation={20} className="myPaper">
+              <h3 className="revMyTitle">Title:</h3>
+              <span style={{ fontSize: "17px" }}>{review.title}</span>
+              <h3 className="revMyTitle">Date:</h3>
+              <span style={{ fontSize: "17px" }}>{review.date}</span>
+              <h3 className="revMyTitle">Image/Video URL:</h3>
+              {review.imageURL === "" ? (
+                <p style={{ fontSize: "17px" }}>N/A</p>
+              ) : (
+                <span style={{ fontSize: "17px" }}>{review.imageURL}</span>
+              )}
+              <h3 className="revMyTitle">Review:</h3>
+              <span style={{ fontSize: "17px" }}>{review.review}</span>
+              <br />
               <Button
                 startIcon={<EditIcon />}
                 onClick={() => {
@@ -94,6 +102,7 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
                   this.updateOn();
                 }}
                 variant="outlined"
+                className="revMyButton"
               >
                 Edit
               </Button>
@@ -103,6 +112,7 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
                   this.deleteRev(review);
                 }}
                 variant="outlined"
+                className="revMyButton"
               >
                 Delete
               </Button>
@@ -116,32 +126,22 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
   inqMapper = () => {
     return this.state.inquiries.map((inquiry: any, index: any) => {
       return (
-        <div key={index}>
-          {inquiry.fullName}
-          {inquiry.email}
-          {inquiry.phoneNumber}
-          {inquiry.car}
-          {inquiry.message}
-          {/* <Button
-            startIcon={<EditIcon />}
-            onClick={() => {
-              this.editUpdate(inquiry);
-              this.updateOn();
-            }}
-            variant="outlined"
-          >
-            Edit
-          </Button>
-          <Button
-            startIcon={<DeleteIcon />}
-            onClick={() => {
-              this.deleteInq(inquiry);
-            }}
-            variant="outlined"
-          >
-            Delete
-          </Button> */}
-        </div>
+        <Stack className="myStack">
+          <div key={index}>
+            <Paper elevation={20} className="myPaper">
+              <h3 className="inqMyTitle">First & Last Name:</h3>
+              <span style={{ fontSize: "17px" }}>{inquiry.fullName}</span>
+              <h3 className="inqMyTitle">Email:</h3>
+              <span style={{ fontSize: "17px" }}>{inquiry.email}</span>
+              <h3 className="inqMyTitle">Phone Number:</h3>
+              <span style={{ fontSize: "17px" }}>{inquiry.phoneNumber}</span>
+              <h3 className="inqMyTitle">Car Make & Model:</h3>
+              <span style={{ fontSize: "17px" }}>{inquiry.car}</span>
+              <h3 className="inqMyTitle">Message:</h3>
+              <span style={{ fontSize: "17px" }}>{inquiry.message}</span>
+            </Paper>
+          </div>
+        </Stack>
       );
     });
   };
@@ -150,7 +150,7 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
     return (
       <>
         <h1 className="actTitle">Your Previous Activity</h1>
-        <h3 className="actTitle2">Reviews</h3>
+        <h3 className="actTitle2">Your Reviews</h3>
         {this.state.reviews.length > 0 ? (
           this.revMapper()
         ) : (
@@ -167,33 +167,22 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
         ) : (
           <></>
         )}
-        <h3 className="actTitle3">Inquiries</h3>
+        <h3 className="actTitle3">Your Inquiries</h3>
         {this.state.inquiries.length > 0 ? (
           this.inqMapper()
         ) : (
           <p className="noInqYet">You have not sent us any inquiries yet.</p>
         )}
 
-        <h3>Want to edit your sent inquiries?</h3>
-        <Link to="/YourActivityPage/InqView">
-          <Button>Click Here</Button>
+        <h3 className="inqNeedUpdate">Need to edit your sent inquiries too?</h3>
+        <Link to="/YourActivityPage/InqView" style={{textDecoration: "none"}}>
+          <Button variant="contained" className="inqNeedUpdateButton">Click Here!</Button>
         </Link>
         <Switch>
           <Route exact path="/YourActivityPage/InqView">
             <InqView token={this.props.token} />
           </Route>
         </Switch>
-
-        {/* {this.state.updateActive ? (
-          <InqUpdate
-            updateMyActivity={this.state.updateMyActivity}
-            token={this.props.token}
-            updateOff={this.updateOff}
-            componentDidMount={this.componentDidMount}
-          />
-        ) : (
-          <p>Oh no! Something went wrong when trying to update your inquiry.</p>
-        )} */}
       </>
     );
   }

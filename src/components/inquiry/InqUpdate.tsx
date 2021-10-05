@@ -86,17 +86,21 @@ export default class InqUpdate extends Component<PropsType, StateType> {
           open={true}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
+          className="revFormField"
         >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h4" component="h2">
-              Update Your Inquiry:
+          <Box sx={style} className="revModal">
+            <Typography variant="h4" component="h2" className="modalTitle2">
+              Edit Your Inquiry:
               <Button onClick={this.props.updateOff}>
-                <CloseIcon />
+                <CloseIcon style={{ color: "#01FFF4" }} />
               </Button>
             </Typography>
+            <hr />
             <form onSubmit={this.inqUpdate}>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <label htmlFor="fullName">Edit Name:</label>
+                <label htmlFor="fullName" className="revUpdateLabel">
+                  Edit Name:
+                </label>
                 <input
                   name="fullName"
                   type="text"
@@ -104,19 +108,27 @@ export default class InqUpdate extends Component<PropsType, StateType> {
                   onChange={(e) =>
                     this.setState({ editFullName: e.target.value })
                   }
+                  className="revUpdateInput"
+                  style={{ marginBottom: "15px" }}
                 />
               </Typography>
               <Typography>
-                <label htmlFor="email">Edit Email:</label>
+                <label htmlFor="email" className="revUpdateLabel">
+                  Edit Email:
+                </label>
                 <input
                   name="email"
                   type="text"
                   value={this.state.editEmail}
                   onChange={(e) => this.setState({ editEmail: e.target.value })}
+                  className="revUpdateInput"
+                  style={{ marginBottom: "15px" }}
                 />
               </Typography>
               <Typography>
-                <label htmlFor="phoneNumber">Edit Phone Number:</label>
+                <label htmlFor="phoneNumber" className="revUpdateLabel">
+                  Edit Phone Number:
+                </label>
                 <input
                   name="phoneNumber"
                   type="tel"
@@ -124,29 +136,44 @@ export default class InqUpdate extends Component<PropsType, StateType> {
                   onChange={(e) =>
                     this.setState({ editPhoneNumber: e.target.value })
                   }
+                  className="revUpdateInput"
+                  style={{ marginBottom: "15px" }}
                 />
               </Typography>
               <Typography>
-                <label htmlFor="car">Edit Car Make & Model:</label>
+                <label htmlFor="car" className="revUpdateLabel2">
+                  Edit Car Make & Model:
+                </label>
                 <input
                   name="car"
                   type="text"
                   value={this.state.editCar}
                   onChange={(e) => this.setState({ editCar: e.target.value })}
+                  className="revUpdateInput"
+                  style={{ marginBottom: "15px" }}
                 />
               </Typography>
               <Typography>
-                <label htmlFor="message">Edit Message:</label>
-                <input
+                <label htmlFor="message" className="revUpdateLabel">
+                  Edit Message:
+                </label>
+                <textarea
                   name="message"
-                  type="text"
+                  rows={6}
                   value={this.state.editMessage}
                   onChange={(e) =>
                     this.setState({ editMessage: e.target.value })
                   }
+                  className="revUpdateTextarea"
                 />
               </Typography>
-              <Button type="submit" variant="contained">Update Inquiry</Button>
+              <Button
+                type="submit"
+                variant="contained"
+                className="revUpdateButton"
+              >
+                Update Inquiry
+              </Button>
             </form>
           </Box>
         </Modal>

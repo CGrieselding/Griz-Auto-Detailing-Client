@@ -82,35 +82,46 @@ export default class RevUpdate extends Component<PropsType, StateType> {
           open={true}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
+          className="revFormField"
         >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h4" component="h2">
-              Update Your Review:
+          <Box sx={style} className="revModal">
+            <Typography variant="h4" component="h2" className="modalTitle">
+              Edit Your Review
               <Button onClick={this.props.updateOff}>
-                <CloseIcon />
+                <CloseIcon style={{ color: "#01FFF4" }} />
               </Button>
             </Typography>
+            <hr />
             <form onSubmit={this.revUpdate}>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <label htmlFor="title">Edit Title:</label>
+              <Typography sx={{ mt: 2 }}>
+                <label htmlFor="title" className="revUpdateLabel">
+                  Edit Title:
+                </label>
                 <input
                   name="title"
                   type="text"
                   value={this.state.editTitle}
                   onChange={(e) => this.setState({ editTitle: e.target.value })}
+                  className="revUpdateInput"
                 />
               </Typography>
               <Typography sx={{ mt: 2 }}>
-                <label htmlFor="date">Edit Date:</label>
+                <label htmlFor="date" className="revUpdateLabel">
+                  Edit Date:
+                </label>
                 <input
                   name="date"
                   type="date"
                   value={this.state.editDate}
                   onChange={(e) => this.setState({ editDate: e.target.value })}
+                  className="revUpdateInput"
+                  style={{ marginBottom: "15px" }}
                 />
               </Typography>
               <Typography>
-                <label htmlFor="imageURL">Edit Image/Video URL:</label>
+                <label htmlFor="imageURL" className="revUpdateLabel">
+                  Edit Image/Video URL:
+                </label>
                 <input
                   name="imageURL"
                   type="url"
@@ -118,20 +129,29 @@ export default class RevUpdate extends Component<PropsType, StateType> {
                   onChange={(e) =>
                     this.setState({ editImageURL: e.target.value })
                   }
+                  className="revUpdateInput"
+                  style={{ marginBottom: "15px" }}
                 />
               </Typography>
               <Typography>
-                <label htmlFor="review">Edit Review:</label>
-                <input
+                <label htmlFor="review" className="revUpdateLabel">
+                  Edit Review:
+                </label>
+                <textarea
                   name="review"
-                  type="text"
+                  rows={6}
                   value={this.state.editReview}
                   onChange={(e) =>
                     this.setState({ editReview: e.target.value })
                   }
+                  className="revUpdateTextarea"
                 />
               </Typography>
-              <Button type="submit" variant="contained">
+              <Button
+                type="submit"
+                variant="contained"
+                className="revUpdateButton"
+              >
                 Update Review
               </Button>
             </form>

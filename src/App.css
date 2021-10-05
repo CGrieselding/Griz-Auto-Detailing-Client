@@ -19,6 +19,129 @@ body {
   font-family: "Website Font";
 }
 
+/* LOGIN PAGE */
+
+.homeButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 25px !important;
+  color: #ea4033 !important;
+  background-color: white !important;
+  border: 2px solid #ea4033 !important;
+  margin: 35px 25px !important;
+}
+
+.createAcctButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 25px !important;
+  color: #ea4033 !important;
+  background-color: white !important;
+  border: 2px solid #ea4033 !important;
+  margin: 35px 25px !important;
+}
+
+.loginButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 25px !important;
+  color: #ea4033 !important;
+  background-color: white !important;
+  border: 2px solid #ea4033 !important;
+  margin: 35px 25px !important;
+}
+
+.logo {
+  border: 5px solid white;
+  margin-top: 100px;
+  height: 500px;
+  width: 38%;
+}
+
+.createAcctTitle {
+  font-family: "Package Font";
+  text-shadow: 2px 2px black;
+  color: #ea4033;
+  font-size: 50px;
+  margin-bottom: 5px !important;
+}
+
+.loginTitle {
+  font-family: "Package Font";
+  text-shadow: 2px 2px black;
+  color: #ea4033;
+  font-size: 60px;
+  margin-bottom: 5px !important;
+}
+
+.createAcctInput {
+  margin: 15px !important;
+  font-family: "Website Font" !important;
+}
+
+.createAcctButton2 {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: black !important;
+  background-color: #ea4033 !important;
+  border: 2px solid black !important;
+  margin-top: 15px !important;
+  margin-bottom: 10px;
+}
+
+.createAcctButton2::before {
+  background: rgba(0, 0, 0, 0) linear-gradient(225deg, #ffffff 45%, black 50%, black 56%, white 80%) repeat scroll 0 0; 
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+  content: "";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition-duration: 0.3s;
+  transition-property: width, height;
+  width: 0;
+}
+.createAcctButton2:hover::before, .createAcctButton2:focus::before, .createAcctButton2:active::before {
+  height: 25px;
+  width: 25px;
+}
+
+.loginButton2 {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 23px !important;
+  color: black !important;
+  background-color: #ea4033 !important;
+  border: 2px solid black !important;
+  margin-top: 15px !important;
+  margin-bottom: 10px;
+}
+
+.loginButton2::before {
+  background: rgba(0, 0, 0, 0) linear-gradient(225deg, #ffffff 45%, black 50%, black 56%, white 80%) repeat scroll 0 0;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+  content: "";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition-duration: 0.3s;
+  transition-property: width, height;
+  width: 0;
+}
+.loginButton2:hover::before, .loginButton2:focus::before, .loginButton2:active::before {
+  height: 25px;
+  width: 25px;
+}
+
 /* HOME PAGE */
 
 .mainTitle {
@@ -168,7 +291,7 @@ body {
   font-family: "Package Font";
   color: #fe0000;
   border: 2px solid white;
-  margin: 60px 600px 15px 600px;
+  margin: 60px 500px 15px 500px;
   padding: 22px 0 10px 0;
   background-color: black;
 }
@@ -286,7 +409,11 @@ body {
   color: #7cff01;
 }
 
-/* YOUR ACTIVITY PAGE */
+.revAllGrid {
+  margin-right: 100px !important;
+}
+
+/* YOUR ACTIVITY PAGE -- REVIEW */
 
 .actTitle {
   font-size: 55px;
@@ -303,7 +430,7 @@ body {
   font-family: "Package Font";
   color: #fff205;
   border: 2px solid white;
-  margin: 60px 700px 15px 700px;
+  margin: 60px 550px 15px 550px;
   padding: 22px 0 15px 0;
   background-color: black;
 }
@@ -320,7 +447,13 @@ body {
   font-size: 45px;
 }
 
-.myRevPaper {
+.noInqYet2 {
+  font-family: "Package Font";
+  color: #b026ff;
+  font-size: 45px;
+}
+
+.myPaper {
   padding: 15px 50px 32px 50px !important;
   border: 2px solid white;
   color: white !important;
@@ -328,16 +461,186 @@ body {
   margin-bottom: 25px;
 }
 
-.revStack {
-margin: 20px 500px 20px 500px;
+.myStack {
+  margin: 20px 650px 20px 650px;
 }
+
+.revMyTitle {
+  font-size: 20px;
+  text-decoration: underline;
+  color: #fff205;
+}
+
+.revMyButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 21px !important;
+  color: black !important;
+  background-color: #fff205 !important;
+  border: 2px solid white !important;
+  margin: 30px 15px 5px 15px !important;
+}
+
+.revMyButton:hover {
+  -webkit-box-shadow: 0px 0px 80px 0px #fff205;
+  -moz-box-shadow: 0px 0px 80px 0px #fff205;
+  box-shadow: 0px 0px 80px 0px #fff205;
+}
+
+/* YOUR ACTIVITY PAGE -- INQUIRY */
 
 .actTitle3 {
   font-size: 40px;
   font-family: "Package Font";
   color: #fe0000;
   border: 2px solid white;
-  margin: 60px 700px 15px 700px;
+  margin: 100px 550px 15px 550px;
   padding: 22px 0 15px 0;
   background-color: black;
+}
+
+.inqMyTitle {
+  font-size: 20px;
+  text-decoration: underline;
+  color: #fe0000;
+}
+
+.inqNeedUpdate {
+  font-family: "Package Font";
+  color: #fe0000;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.inqNeedUpdateButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: white !important;
+  margin-bottom: 35px !important;
+  background-color: #fe0000 !important;
+  border: 2px solid white !important;
+  -webkit-transition: all 0.2s !important;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0px 6px 0px #fe0000 !important;
+  -moz-box-shadow: 0px 6px 0px #fe0000 !important;
+  box-shadow: 0px 6px 0px white !important;
+  text-decoration: none !important;
+}
+
+.inqNeedUpdateButton:active {
+  -webkit-box-shadow: 0px 2px 0px #fe0000 !important;
+  -moz-box-shadow: 0px 2px 0px #fe0000 !important;
+  box-shadow: 0px 2px 0px #fe0000 !important;
+  position: relative;
+  top: 4px;
+}
+
+/* REV UPDATE */
+
+.revModal {
+  background-color: black !important;
+  border: 4px solid #01fff4 !important;
+}
+
+.modalTitle {
+  color: #01fff4 !important;
+  font-family: "Package Font" !important;
+  font-size: 45px !important;
+}
+
+.modalTitle2 {
+  color: #01fff4 !important;
+  font-family: "Package Font" !important;
+  font-size: 40px !important;
+}
+
+.revUpdateLabel {
+  color: #01fff4 !important;
+  font-family: "Website Font" !important;
+  margin-right: 12px !important;
+  font-size: 17px;
+}
+
+.revUpdateLabel2 {
+  color: #01fff4 !important;
+  font-family: "Website Font" !important;
+  margin-right: 12px !important;
+  font-size: 14px;
+}
+
+.revUpdateInput {
+  font-family: "Website Font" !important;
+  width: 200px;
+  padding: 5px;
+}
+
+.revUpdateTextarea {
+  font-family: "Website Font" !important;
+  width: 200px !important;
+  padding: 5px !important;
+}
+
+.revUpdateInput:focus,
+.revUpdateTextarea:focus,
+.revUpdateInput[type]:focus {
+  border-color: #01fff4 !important;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #01fff4 !important;
+  outline: 0 none !important;
+}
+
+.revFormField * {
+  vertical-align: middle !important;
+}
+
+.revUpdateButton {
+  font-family: "Package Font" !important;
+  padding: 5px !important;
+  font-weight: 800 !important;
+  font-size: 21px !important;
+  color: black !important;
+  background-color: #01fff4 !important;
+  border: 2px solid white !important;
+  margin: 23px 15px 5px 15px !important;
+}
+
+.revUpdateButton:hover {
+  -webkit-box-shadow: 0px 0px 80px 0px #01fff4 !important;
+  -moz-box-shadow: 0px 0px 80px 0px #01fff4 !important;
+  box-shadow: 0px 0px 80px 0px #01fff4 !important;
+}
+
+/* INQ VIEW */
+
+.inqNeedUpdateTitle {
+  font-family: "Package Font";
+  color: #b026ff;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.inqMyTitle2 {
+  font-size: 20px;
+  text-decoration: underline;
+  color: #b026ff;
+}
+
+.inqMyButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 21px !important;
+  color: black !important;
+  background-color: #b026ff !important;
+  border: 2px solid white !important;
+  margin: 30px 15px 5px 15px !important;
+}
+
+.inqMyButton:hover {
+  -webkit-box-shadow: 0px 0px 100px 0px #b026ff;
+  -moz-box-shadow: 0px 0px 100px 0px #b026ff;
+  box-shadow: 0px 0px 100px 0px #b026ff;
 }

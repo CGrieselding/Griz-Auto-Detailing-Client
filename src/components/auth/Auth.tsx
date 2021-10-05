@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CreateAcct from "./CreateAcct";
 import Login from "./Login";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import {Button} from "@mui/material";
+import { Button, Grid } from "@mui/material";
 
 type PropsType = {
   updateToken: (input: string) => void;
@@ -17,19 +17,39 @@ export default class Auth extends Component<PropsType, {}> {
     return (
       <>
         <nav>
-          <Button variant="outlined">
-            <Link to="/Home">Home</Link>
+          <Button variant="outlined" className="homeButton">
+            <Link
+              to="/Home"
+              style={{ textDecoration: "none", color: "#ea4033" }}
+            >
+              Home
+            </Link>
           </Button>
-          <Button variant="outlined">
-            <Link to="/CreateAcct">Create Account</Link>
+          <Button variant="outlined" className="createAcctButton">
+            <Link
+              to="/CreateAcct"
+              style={{ textDecoration: "none", color: "#ea4033" }}
+            >
+              Create Account
+            </Link>
           </Button>
-          <Button variant="outlined">
-            <Link to="/Login">Login</Link>
+          <Button variant="outlined" className="loginButton">
+            <Link
+              to="/Login"
+              style={{ textDecoration: "none", color: "#ea4033" }}
+            >
+              Login
+            </Link>
           </Button>
         </nav>
         <Switch>
           <Route exact path="/Home">
-            <h1>Griz Auto Detailing</h1>
+            <Grid container justifyContent="center">
+              <img
+                src={require("../../assets/images/logo.jpg").default}
+                className="logo"
+              />
+            </Grid>
           </Route>
           <Route path="/CreateAcct">
             <CreateAcct updateToken={this.props.updateToken} />

@@ -32,8 +32,8 @@ export default class RevAll extends Component<PropsType, StateType> {
       });
   };
 
+  // ADD PAGINATION??
   render() {
-    // ADD PAGINATION??
     return (
       <>
         <h1 className="revTitle2">Check Out Our Reviews!</h1>
@@ -43,22 +43,23 @@ export default class RevAll extends Component<PropsType, StateType> {
           justifyContent="flex-start"
           alignItems="center"
           direction="row"
-          style={{marginLeft: "20px"}}
         >
           {this.state.reviews.map((review: any) => (
             <>
               <Grid container item xs={3}>
                 <Paper elevation={20} className="revAllPaper">
                   <h3 className="revAllTitle">Title:</h3>
-                  <span style={{fontSize: "17px"}}>{review.title}</span>
+                  <span style={{ fontSize: "17px" }}>{review.title}</span>
                   <h3 className="revAllTitle">Date:</h3>
-                  <span style={{fontSize: "17px"}}>{review.date}</span>
+                  <span style={{ fontSize: "17px" }}>{review.date}</span>
                   <h3 className="revAllTitle">Image/Video URL:</h3>
-                  {review.imageURL != 0 ? (
-                    <span style={{fontSize: "17px"}}>{review.imageURL}</span>
-                    ) : (<p style={{fontSize: "17px"}}>N/A</p>)}
+                  {review.imageURL === "" ? (
+                    <p style={{ fontSize: "17px" }}>N/A</p>
+                  ) : (
+                    <span style={{ fontSize: "17px" }}>{review.imageURL}</span>
+                  )}
                   <h3 className="revAllTitle">Review:</h3>
-                  <span style={{fontSize: "17px"}}>{review.review}</span>
+                  <span style={{ fontSize: "17px" }}>{review.review}</span>
                 </Paper>
               </Grid>
             </>

@@ -64,7 +64,7 @@ export default class HomePage extends Component<PropsType, StateType> {
         </AppBar>
         <Switch>
           <Route path="/OurWorkPage">
-            <OurWorkPage />
+            <OurWorkPage token={this.props.token} />
           </Route>
           <Route path="/RevPage">
             <RevPage token={this.props.token} />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TextField, Button, Box } from "@mui/material";
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
 type StateType = {
   email: string;
@@ -19,7 +19,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "6px solid #7CFF01",
+  border: "6px solid #ea4033",
   boxShadow: 24,
   p: 4,
 };
@@ -30,11 +30,11 @@ export default class Login extends Component<PropsType, StateType> {
     this.state = {
       email: "",
       password: "",
-      isAdmin: false
+      isAdmin: false,
     };
   }
 
-  handleSubmit (e: any) {
+  handleSubmit(e: any) {
     e.preventDefault();
     fetch("http://localhost:4000/user/login", {
       method: "POST",
@@ -56,46 +56,50 @@ export default class Login extends Component<PropsType, StateType> {
       });
   }
 
-
   render() {
     return (
       <>
-      <h1>Griz Auto Detailing</h1>
-      <Box sx={style}>
-        <h1>Login</h1>
-        <AccountBoxIcon style={{fontSize: "55px", marginBottom: "15px"}}/>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <div>
-            <TextField
-              type="email"
-              id="outlined-basic"
-              label="Email"
-              variant="outlined"
-              onChange={(e) => this.setState({ email: e.target.value })}
-              value={this.state.email}
-            >
-              E-mail
-            </TextField>
-          </div>
-          <div>
-            <TextField
-              id="outlined-basic"
-              label="Password"
-              variant="outlined"
-              type="password"
-              inputProps={{
-                minLength: 5,
-              }}
-              onChange={(e) => this.setState({ password: e.target.value })}
-              value={this.state.password}
-            >
-              Password
-            </TextField>
-          </div>
-          <Button type="submit" variant="contained">
-            Login
-          </Button>
-        </form>
+        <Box sx={style}>
+          <h1 className="loginTitle">Login</h1>
+          <AccountBoxIcon
+            style={{ fontSize: "55px", marginBottom: "15px", color: "#ea4033" }}
+          />
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <div>
+              <TextField
+                type="email"
+                id="outlined-basic"
+                label="Email"
+                variant="outlined"
+                onChange={(e) => this.setState({ email: e.target.value })}
+                value={this.state.email}
+                className="createAcctInput"
+                required
+              >
+                E-mail
+              </TextField>
+            </div>
+            <div>
+              <TextField
+                id="outlined-basic"
+                label="Password"
+                variant="outlined"
+                type="password"
+                inputProps={{
+                  minLength: 5,
+                }}
+                onChange={(e) => this.setState({ password: e.target.value })}
+                value={this.state.password}
+                className="createAcctInput"
+                required
+              >
+                Password
+              </TextField>
+            </div>
+            <Button type="submit" variant="contained" className="loginButton2">
+              Login
+            </Button>
+          </form>
         </Box>
       </>
     );

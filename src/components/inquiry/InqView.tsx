@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "@mui/material";
+import { Button, Stack, Paper } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import InqUpdate from "./InqUpdate";
@@ -63,32 +63,43 @@ export default class InqView extends Component<PropsType, StateType> {
   inqMapper = () => {
     return this.state.inquiries.map((inquiry: any, index: any) => {
       return (
-        <div key={index}>
-          {inquiry.fullName}
-          {inquiry.email}
-          {inquiry.phoneNumber}
-          {inquiry.car}
-          {inquiry.message}
-          <Button
-            startIcon={<EditIcon />}
-            onClick={() => {
-              this.editUpdate(inquiry);
-              this.updateOn();
-            }}
-            variant="outlined"
-          >
-            Edit
-          </Button>
-          <Button
-            startIcon={<DeleteIcon />}
-            onClick={() => {
-              this.deleteInq(inquiry);
-            }}
-            variant="outlined"
-          >
-            Delete
-          </Button>
-        </div>
+        <Stack className="myStack">
+          <h2 className="inqNeedUpdateTitle">Your Editable Inquiries Below:</h2>
+          <div key={index} className="myPaper">
+            <h3 className="inqMyTitle2">First & Last Name:</h3>
+            <span style={{ fontSize: "17px" }}>{inquiry.fullName}</span>
+            <h3 className="inqMyTitle2">Email:</h3>
+            <span style={{ fontSize: "17px" }}>{inquiry.email}</span>
+            <h3 className="inqMyTitle2">Phone Number:</h3>
+            <span style={{ fontSize: "17px" }}>{inquiry.phoneNumber}</span>
+            <h3 className="inqMyTitle2">Car Make & Model:</h3>
+            <span style={{ fontSize: "17px" }}>{inquiry.car}</span>
+            <h3 className="inqMyTitle2">Message:</h3>
+            <span style={{ fontSize: "17px" }}>{inquiry.message}</span>
+            <br />
+            <Button
+              startIcon={<EditIcon />}
+              onClick={() => {
+                this.editUpdate(inquiry);
+                this.updateOn();
+              }}
+              variant="outlined"
+              className="inqMyButton"
+            >
+              Edit
+            </Button>
+            <Button
+              startIcon={<DeleteIcon />}
+              onClick={() => {
+                this.deleteInq(inquiry);
+              }}
+              variant="outlined"
+              className="inqMyButton"
+            >
+              Delete
+            </Button>
+          </div>
+        </Stack>
       );
     });
   };
@@ -99,7 +110,7 @@ export default class InqView extends Component<PropsType, StateType> {
         {this.state.inquiries.length > 0 ? (
           this.inqMapper()
         ) : (
-          <p className="noInqYet">You have no inquiries to edit.</p>
+          <p className="noInqYet2">You have no inquiries to edit.</p>
         )}
 
         {this.state.updateActive ? (
