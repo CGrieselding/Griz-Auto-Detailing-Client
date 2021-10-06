@@ -18,23 +18,23 @@ Upon loading the web application, regular users will be able to either to create
 
 The Home page is where users can view all of the detailing packages and services Griz Auto Detailing provides. At the bottom of this page is an inquiry form that users are able to fill out if they have a question and/or would like more information. The inquiry form consists of a first & last name, email, phone number (optional), car make & model, and a message. This form was constructed using [Formspree](https://formspree.io/).
 
-### Using The App - Our Work
+### Using The App -- Our Work
 
 The Our Work page utilizes a Material UI ImageList to display a few pictures of cars Griz Auto Detailing has previously worked on. I am hoping to eventually display "before" and "after" pictures on this page, so users are able to truly see the outstanding work that Griz Auto Detailing does.
 
-### Using The App - Reviews
+### Using The App -- Reviews
 
 The Reviews page gives the user the ability to write and post a review. The review form consists of a title, date, image/video link (optional), and the review itself. Just below the review form is a section the displays all of the reviews of Griz Auto Detailing has received. Users are able to scroll through the reviews and read about other customer's experiences.
 
-### Using The App - Your Activity
+### Using The App -- Your Activity
 
 The Your Activity page allows users to view all of their previously submitted reviews and sent inquiries. But it doesn't stop there! Users also have the option to update/edit and/or completely delete their past reviews and inquiries if they so please.
 
-### Using The App - Logout
+### Using The App -- Logout
 
 The Logout button simply logs the user out of their account and takes them back to the create account/login page.
 
-### *Using The App - Admin Roles*
+### *Using The App -- Admin Roles*
 
 By implementing role based access control, users that are deemed as admin have an additional tab on their Material UI App Bar titled "Admin Roles". On this page admin users are able to see two Material UI tables. The first table displays all of the registered users on the app. This table includes a feature that allows admin users to delete a users account if needed. The second table displays all of the previously sent inquiries and associated information in the database.
 
