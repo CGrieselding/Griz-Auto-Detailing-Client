@@ -7,9 +7,6 @@ type PropsType = {
 }
 
 export default class RevPage extends Component<PropsType, {}> {
-    constructor(props: any) {
-        super(props);
-    }
 
     render() {
         return(

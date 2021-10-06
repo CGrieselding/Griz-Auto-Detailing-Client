@@ -48,6 +48,7 @@ export default class Auth extends Component<PropsType, {}> {
               <img
                 src={require("../../assets/images/logo.jpg").default}
                 className="logo"
+                alt="logo"
               />
             </Grid>
           </Route>

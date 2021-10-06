@@ -64,7 +64,7 @@ export default class InqSend extends Component<PropsType, StateType> {
       .then((r) => {
         this.handleServerResponse(
           true,
-          "Your inquiry has been sent to Griz Auto Detailing!",
+          <span className="inqSent">Your inquiry has been sent to Griz Auto Detailing!</span>,
           form
         );
       })

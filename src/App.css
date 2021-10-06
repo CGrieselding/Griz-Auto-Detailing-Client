@@ -95,7 +95,9 @@ body {
 }
 
 .createAcctButton2::before {
-  background: rgba(0, 0, 0, 0) linear-gradient(225deg, #ffffff 45%, black 50%, black 56%, white 80%) repeat scroll 0 0; 
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(225deg, #ffffff 45%, black 50%, black 56%, white 80%) repeat
+    scroll 0 0;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
   content: "";
   height: 0;
@@ -107,7 +109,9 @@ body {
   transition-property: width, height;
   width: 0;
 }
-.createAcctButton2:hover::before, .createAcctButton2:focus::before, .createAcctButton2:active::before {
+.createAcctButton2:hover::before,
+.createAcctButton2:focus::before,
+.createAcctButton2:active::before {
   height: 25px;
   width: 25px;
 }
@@ -125,7 +129,9 @@ body {
 }
 
 .loginButton2::before {
-  background: rgba(0, 0, 0, 0) linear-gradient(225deg, #ffffff 45%, black 50%, black 56%, white 80%) repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(225deg, #ffffff 45%, black 50%, black 56%, white 80%) repeat
+    scroll 0 0;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
   content: "";
   height: 0;
@@ -137,7 +143,9 @@ body {
   transition-property: width, height;
   width: 0;
 }
-.loginButton2:hover::before, .loginButton2:focus::before, .loginButton2:active::before {
+.loginButton2:hover::before,
+.loginButton2:focus::before,
+.loginButton2:active::before {
   height: 25px;
   width: 25px;
 }
@@ -282,6 +290,12 @@ body {
   box-shadow: 0px 2px 0px #ff1178;
   position: relative;
   top: 4px;
+}
+
+.inqSent {
+  color: #ff1178;
+  font-size: 25px;
+  font-family: "Website Font"
 }
 
 /* OUR WORK */
@@ -643,4 +657,67 @@ body {
   -webkit-box-shadow: 0px 0px 100px 0px #b026ff;
   -moz-box-shadow: 0px 0px 100px 0px #b026ff;
   box-shadow: 0px 0px 100px 0px #b026ff;
+}
+
+/* ADMIN ROLES */
+
+.noAdminTitle {
+  font-family: "Package Font";
+  color: #fe0000;
+  font-size: 40px;
+}
+
+.adDeleteTitle {
+  font-family: "Package Font";
+  color: #7cff01;
+  font-size: 50px;
+  margin-top: 50px;
+  text-decoration: underline;
+}
+
+.allInqTitle {
+  font-family: "Package Font";
+  color: #ff1178;
+  font-size: 50px;
+  margin-top: 50px;
+  text-decoration: underline;
+}
+
+.userTableHeader {
+  color: #7cff01 !important;
+  font-family: "Website Font" !important;
+  font-size: 22px !important;
+  background-color: black !important;
+  padding: 15px !important;
+}
+
+.inqTableHeader {
+  color: #ff1178 !important;
+  font-family: "Website Font" !important;
+  font-size: 22px !important;
+  background-color: black !important;
+  padding: 15px !important;
+}
+
+.tableInfo {
+  color: white !important;
+  font-family: "Website Font" !important;
+  font-size: 15px !important;
+}
+
+.userTableButton {
+  font-family: "Package Font" !important;
+  padding: 8px !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: black !important;
+  background-color: #7cff01 !important;
+  border: 2px solid white !important;
+  margin: 15px 15px 15px 15px !important;
+}
+
+.userTableButton:hover {
+  -webkit-box-shadow: 0px 0px 100px 0px #7cff01;
+  -moz-box-shadow: 0px 0px 100px 0px #7cff01;
+  box-shadow: 0px 0px 100px 0px #7cff01;
 }

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AdminDelete from "./AdminDelete";
+import AdminInq from "./AdminInq";
 
 type StateType = {
   isAdmin: boolean;
@@ -27,16 +29,22 @@ export default class Admin extends Component<PropsType, StateType> {
       .then((res) => res.json())
       .then((confirmedAdmin) => {
         if (confirmedAdmin !== null) this.setState({ isAdmin: true });
-        //console.log(confirmedAdmin)
       });
   };
 
   render() {
     return (
       <>
-        {this.state.isAdmin === true
-          ? "You are an admin"
-          : "Sorry, access denied!"}
+        {this.state.isAdmin === true ? (
+          <>
+            <AdminDelete token={this.props.token} />
+            <AdminInq token={this.props.token} />
+          </>
+        ) : (
+          <p className="noAdminTitle">
+            "Sorry! You do not have access to this page."
+          </p>
+        )}
       </>
     );
   }

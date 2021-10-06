@@ -32,7 +32,6 @@ export default class RevAll extends Component<PropsType, StateType> {
       });
   };
 
-  // ADD PAGINATION??
   render() {
     return (
       <>

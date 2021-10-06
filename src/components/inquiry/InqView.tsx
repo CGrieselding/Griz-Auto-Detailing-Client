@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Stack, Paper } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import InqUpdate from "./InqUpdate";
@@ -63,9 +63,10 @@ export default class InqView extends Component<PropsType, StateType> {
   inqMapper = () => {
     return this.state.inquiries.map((inquiry: any, index: any) => {
       return (
+        <div key={index} >
         <Stack className="myStack">
           <h2 className="inqNeedUpdateTitle">Your Editable Inquiries Below:</h2>
-          <div key={index} className="myPaper">
+          <div className="myPaper">
             <h3 className="inqMyTitle2">First & Last Name:</h3>
             <span style={{ fontSize: "17px" }}>{inquiry.fullName}</span>
             <h3 className="inqMyTitle2">Email:</h3>
@@ -100,6 +101,7 @@ export default class InqView extends Component<PropsType, StateType> {
             </Button>
           </div>
         </Stack>
+        </div>
       );
     });
   };
