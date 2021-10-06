@@ -120,7 +120,7 @@ export default class RevUpdate extends Component<PropsType, StateType> {
               </Typography>
               <Typography>
                 <label htmlFor="imageURL" className="revUpdateLabel">
-                  Edit Image/Video URL:
+                  Edit Image/Video Link:
                 </label>
                 <input
                   name="imageURL"

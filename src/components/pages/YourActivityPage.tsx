@@ -86,7 +86,7 @@ export default class YourActivityPage extends Component<PropsType, StateType> {
               <span style={{ fontSize: "17px" }}>{review.title}</span>
               <h3 className="revMyTitle">Date:</h3>
               <span style={{ fontSize: "17px" }}>{review.date}</span>
-              <h3 className="revMyTitle">Image/Video URL:</h3>
+              <h3 className="revMyTitle">Image/Video Link:</h3>
               {review.imageURL === "" ? (
                 <p style={{ fontSize: "17px" }}>N/A</p>
               ) : (
